@@ -1,11 +1,11 @@
 /*
-* M4 Compiler - Coffe, Sass and Less
+* Wcompilr - Coffe, Sass and Less watcher and compiler
 * author: Paulo Martins <phmartins6@gmail.com>
 * version: 0.1
 */
-var modules = []
 var child = require('child_process');
 var exec = child.exec;
+var modules = []
 
 // Start
 console.log('- M4 Compiler');
@@ -19,14 +19,14 @@ params.shift();
 
 // Call function by param
 if(params.length==0)
-	console.log('Choose an action: install, watch or production');
+	console.log('Choose an action: install, watch or build');
 else {
 	if(params[0]=='install')
 		installModules();
 	else if(params[0]=='watch' && checkModules())
 		watchProject();
-	else if(params[0]=='production' && checkModules())
-		compileToProduction();
+	else if(params[0]=='build' && checkModules())
+		bildProject();
 }
 
 // Install all modules
@@ -52,7 +52,7 @@ function installModules() {
 
 // Check all modules
 function checkModules(onlyCheck) {
-	if(typeof onlyCheck == undefined)
+	if(typeof onlyCheck == 'undefined')
 		onlyCheck = false;
 
 	try { require('node-watch'); }
@@ -73,7 +73,7 @@ function checkModules(onlyCheck) {
 	if(modules.length>0) {
 		if(!onlyCheck) {
 			console.log('Some modules were not found: ' + modules.join(', '));
-			console.log('Execute node m4-compiler install');
+			console.log('Execute node wcompilr.js install');
 		}
 
 		return false;
@@ -89,7 +89,7 @@ function watchProject() {
 }
 
 // Compile and minify files
-function compileToProduction() {
+function bildProject() {
 	console.log('Preparing files...');
 	require('./source/build.js');
 }

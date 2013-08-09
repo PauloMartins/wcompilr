@@ -1,10 +1,10 @@
 /*
-* M4 Compiler - Coffe, Sass and Less
+* Wcompilr - Coffe, Sass and Less watcher and compiler
 * author: Paulo Martins <phmartins6@gmail.com>
 * version: 0.1
 */
 if(process.argv[0]=='node') {
-	console.log('M4 Compiler: Not run this file directly. Run the m4-compiler.js');
+	console.log('M4 Compiler: Don\'t run this file directly. Run the wcompilr.js');
 	return false;
 }
 

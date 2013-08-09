@@ -4,7 +4,7 @@
 * version: 0.1
 */
 if(process.argv[0]=='node') {
-	console.log('M4 Compiler: Not run this file directly. Run the m4-compiler.js');
+	console.log('Wcompilr: Don\'t run this file directly. Run the wcompilr.js');
 	return false;
 }
 
