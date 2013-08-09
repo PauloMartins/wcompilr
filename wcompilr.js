@@ -8,7 +8,7 @@ var exec = child.exec;
 var modules = []
 
 // Start
-console.log('- M4 Compiler');
+console.log('- Wcompilr');
 
 // Get command line
 var params = process.argv;
@@ -54,9 +54,6 @@ function installModules() {
 function checkModules(onlyCheck) {
 	if(typeof onlyCheck == 'undefined')
 		onlyCheck = false;
-
-	try { require('node-watch'); }
-	catch(e) { modules.push('node-watch') }
 
 	try { require('node-sass'); }
 	catch(e) { modules.push('node-sass') }
