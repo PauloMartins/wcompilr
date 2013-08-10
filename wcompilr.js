@@ -109,7 +109,10 @@ function watchProject() {
 	'use strict';
 
 	console.log('Watching...');
-	require('./source/watch.js');
+	
+	var watch = require('./source/watch.js');
+	
+	watch.init();
 }
 
 // Compile and minify files
@@ -117,5 +120,8 @@ function bildProject() {
 	'use strict';
 
 	console.log('Preparing files...');
-	require('./source/build.js');
+	
+	var build = require('./source/build.js');
+
+	build.init();
 }
