@@ -1,9 +1,15 @@
+/*jshint forin:true, noarg:true, noempty:true, eqeqeq:true, bitwise:true, strict:true, undef:true,
+unused:true, curly:true, browser:false, indent:4, maxerr:50, jquery: true */
+
+/*global console*/
+
 /*
 * Wcompilr - Coffe, Sass and Less watcher and compiler
 * author: Paulo Martins <phmartins6@gmail.com>
 * version: 0.1
 */
-if(process.argv[0]=='node') {
+
+if (process.argv[0] === 'node') {
 	console.log('M4 Compiler: Don\'t run this file directly. Run the wcompilr.js');
 	return false;
 }
@@ -64,7 +70,7 @@ exports.file = function(file, compressed) {
 					var content = tree.toCSS({ compress: compressed });
 					var filePath = config.css.output_dir + config.css.output_file;
 					var directory = filePath.split(config.css.output_file)[0];
-					
+
 					if(checkFileOrDirectory(directory, 'Directory')) {
 						fs.writeFile(filePath, content, function(err){
 							if(err) { console.log(err) }
@@ -98,6 +104,8 @@ exports.file = function(file, compressed) {
 					});
 				}
 			});
+		} else {
+			console.log('Directory not found: ' + directory);
 		}
 	}
 
