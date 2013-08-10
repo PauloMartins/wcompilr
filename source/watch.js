@@ -1,4 +1,4 @@
-/*jshint forin:true, noarg:true, noempty:true, eqeqeq:true, bitwise:true, strict:true, undef:true, 
+/*jshint forin:true, noarg:true, noempty:true, eqeqeq:true, bitwise:true, strict:true, undef:true,
 unused:true, curly:true, browser:false, indent:4, maxerr:50, jquery: true */
 
 /*global console*/
@@ -13,61 +13,35 @@ if (process.argv[0] === 'node') {
 	return false;
 }
 
-<<<<<<< HEAD
-// Start
-var fs = require('fs'),
-	config = require('../config.json').config,
-	files = [];
-=======
-exports.init = function() {
-	var fs 		= require('fs'),
-		config 	= require('../config.json').config,
+exports.init = function () {
+	'use strict';
+
+	var fs = require('fs'),
+		config = require('../config.json').config,
 		compile = require('./compile.js'),
-		files	= [];
->>>>>>> upstream/master
+		files = [];
 
 	// Define files
-	if(typeof config.css !== 'undefined')
+	if (typeof config.css !== 'undefined') {
 		files.push(config.css.input_dir + config.css.input_file);
-	if(typeof config.js !== 'undefined')
+	}
+
+	if (typeof config.js !== 'undefined') {
 		files.push(config.js.input_dir + config.js.input_file);
+	}
 
-<<<<<<< HEAD
-// Define files
-if (typeof config.css !== 'undefined') {
-	files.push(config.css.input_dir + config.css.input_file);
-}
-
-if (typeof config.js !== 'undefined') {
-	files.push(config.js.input_dir + config.js.input_file);
-}
-
-// Watch
-if (files.length > 0) {
-	var i = 0;
-
-	for (i; i < files.length; i++) {
-		var currentFile = files[i];
-
-		if (fs.existsSync(currentFile)) {
-			fs.watch(currentFile, function (e, file) {
-				'use strict';
-
-				compileFile(file);
-=======
 	// Watch
-	if(files.length>0) {
+	if (files.length > 0) {
 		var i = 0;
 
-		for(i; i<files.length; i++) {
+		for (i; i < files.length; i++) {
 			var currentFile = files[i];
 
-			fs.watch(currentFile, function(e, file){
+			fs.watch(currentFile, function (e, file) {
 				compile.file(file);
->>>>>>> upstream/master
 			});
-		} else {
-			console.log('File not found: ' + currentFile);
 		}
+	} else {
+		console.log('File not found: ' + currentFile);
 	}
 }

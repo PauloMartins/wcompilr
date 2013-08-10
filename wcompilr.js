@@ -1,4 +1,4 @@
-/*jshint forin:true, noarg:true, noempty:true, eqeqeq:true, bitwise:true, strict:true, undef:true, 
+/*jshint forin:true, noarg:true, noempty:true, eqeqeq:true, bitwise:true, strict:true, undef:true,
 unused:true, curly:true, browser:false, indent:4, maxerr:50, jquery: true */
 
 /*global console, require*/
@@ -43,7 +43,7 @@ function installModules() {
 
 	if (!checkModules(true)) {
 		var i = 0;
-		
+
 		console.log('Modules not found: ' + modules.join(', '));
 		console.log('Installing modules...');
 
@@ -68,27 +68,27 @@ function checkModules(onlyCheck) {
 		onlyCheck = false;
 	}
 
-	try { 
-		require('node-sass'); 
-	} catch (e) { 
+	try {
+		require('node-sass');
+	} catch (e) {
 		modules.push('node-sass');
 	}
 
-	try { 
-		require('less'); 
-	} catch (e) { 
+	try {
+		require('less');
+	} catch (e) {
 		modules.push('less');
 	}
 
-	try { 
-		require('coffee-script'); 
-	} catch (e) { 
+	try {
+		require('coffee-script');
+	} catch (e) {
 		modules.push('coffee-script');
 	}
 
-	try { 
-		require('uglify-js'); 
-	} catch (e) { 
+	try {
+		require('uglify-js');
+	} catch (e) {
 		modules.push('uglify-js');
 	}
 
@@ -101,7 +101,7 @@ function checkModules(onlyCheck) {
 		return false;
 	} else {
 		return true;
-	}		
+	}
 }
 
 // Watch files for compile
@@ -109,9 +109,9 @@ function watchProject() {
 	'use strict';
 
 	console.log('Watching...');
-	
+
 	var watch = require('./source/watch.js');
-	
+
 	watch.init();
 }
 
@@ -120,7 +120,7 @@ function bildProject() {
 	'use strict';
 
 	console.log('Preparing files...');
-	
+
 	var build = require('./source/build.js');
 
 	build.init();
