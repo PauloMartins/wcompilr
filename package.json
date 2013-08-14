@@ -1,0 +1,18 @@
+{
+  "name" : "Wcompilzr",
+  "description" : "Watches and compiles coffescript, sass and less",
+  "keywords" : [ "sass", "less", "coffee", "coffeescript", "compile", "watch" ],
+  "version" : "0.0.1",
+  "author" : "Paulo Martins",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/PauloMartins/wcompilr.git"
+  },
+  "dependencies" : {
+    "node-sass" : ">=0.6.4",
+    "less" : ">=1.4.2",
+    "coffee-script" : ">=1.6.3",
+    "uglify-js" : ">=2.3.6"
+  },
+  "engines" : { "node" : ">=0.2.5" }
+}
