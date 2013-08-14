@@ -3,16 +3,16 @@
         "app": "App Test",
 	    "css": {
 	    	"preprocessor": "sass",
-			"input_dir": "sass/",
+			"input_dir": "../../sass/",
 			"input_file": "main.scss",
-			"output_dir": "css/",
+			"output_dir": "../../css/",
 			"output_file": "main.css"
 	    },
 	    "js": {
 	    	"preprocessor": "coffee",
-			"input_dir": "coffee/",
+			"input_dir": "../../coffee/",
 			"input_file": "main.coffee",
-			"output_dir": "js/",
+			"output_dir": "../../js/",
 			"output_file": "main.js"
 	    }
     }

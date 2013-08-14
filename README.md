@@ -1,21 +1,30 @@
-**Wcompilr**
+**Introduction**
 ===========
 
-Plugin Node para assistir e compilar Coffe, Sass e Less.
+NodeJS plugin for Watches and compiles coffeScript, sass and less.
 
 
-**Pré-requisito**
+**Prerequisites**
 
-Node devidamente instalado: http://nodejs.org
+Node: http://nodejs.org
 
-**Instruções de uso**
 
-- Clone ou faça o download do Wcompilr na raiz do seu projeto
-- Entre na pasta do Wcompilr e faça as devidas configurações no arquivo config.json
-- No terminal, navegue até a mesma pasta, e digite node wcompilr.js #comando
+**Quick Start**
 
-**Comandos**
+*Install*
 
-- install: Instala os módulos dependentes
-- watch: Assiste e compila os arquivos configurados
-- build: Compila e minifica os arquivos configurados
+`npm install wcompilr`
+clone this repository or
+[Download zip](https://github.com/PauloMartins/wcompilr/archive/master.zip)
+
+*Use*
+
+- Go to node_modules/wcompilr
+- Configure the file config.json
+- Run wcompilr: node wcompilr watch/build
+
+
+**Commands**
+
+- watch: Watch and compile files
+- build: Compile and compress files

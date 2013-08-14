@@ -12,7 +12,7 @@ var child = require('child_process'),
 	modules = [];
 
 // Start
-console.log('- Wcompilr: ' + config.app);
+console.log('Wcompilr: ' + config.app);
 
 // Get command line
 var params = process.argv;

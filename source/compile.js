@@ -8,7 +8,7 @@ unused:true, curly:true, browser:false, indent:4, maxerr:50, jquery: true */
 */
 
 if (process.argv[0] === 'node') {
-	console.log('M4 Compiler: Don\'t run this file directly. Run the wcompilr.js');
+	console.log('Wcompilr: Don\'t run this file directly. Run the wcompilr.js');
 	return false;
 }
 

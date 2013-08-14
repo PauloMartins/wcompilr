@@ -1,5 +1,5 @@
 {
-  "name" : "Wcompilzr",
+  "name" : "wcompilr",
   "description" : "Watches and compiles coffescript, sass and less",
   "keywords" : [ "sass", "less", "coffee", "coffeescript", "compile", "watch" ],
   "version" : "0.0.1",
@@ -14,5 +14,5 @@
     "coffee-script" : ">=1.6.3",
     "uglify-js" : ">=2.3.6"
   },
-  "engines" : { "node" : ">=0.2.5" }
+  "engines" : { "node" : ">=0.10.1" }
 }
