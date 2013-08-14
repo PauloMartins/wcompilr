@@ -40,7 +40,7 @@ exports.file = function(file, compressed) {
 	function compileSass(file, compressed) {
 		var currentFile = config.css.input_dir + file;
 
-		if(checkFileOrDirectory(currentFile, 'File')) {
+		if (checkFileOrDirectory(currentFile, 'File')) {
 			sass.render({
 				file: currentFile,
 				outputStyle: compressed ? 'compressed' : 'nested',
@@ -48,7 +48,7 @@ exports.file = function(file, compressed) {
 					var filePath = config.css.output_dir + config.css.output_file;
 					var directory = filePath.split(config.css.output_file)[0];
 
-					if(checkFileOrDirectory(directory, 'Directory')) {
+					if (checkFileOrDirectory(directory, 'Directory')) {
 						fs.writeFile(filePath, content);
 						projectLog('updated', filePath);
 					}
@@ -64,16 +64,16 @@ exports.file = function(file, compressed) {
 		var parser = new(less.Parser);
 		var currentFile = config.css.input_dir + file;
 
-		if(checkFileOrDirectory(currentFile, 'File')) {
+		if (checkFileOrDirectory(currentFile, 'File')) {
 			fs.readFile(currentFile, 'utf8', function(err, data){
 				parser.parse(data, function(err, tree){
 					var content = tree.toCSS({ compress: compressed });
 					var filePath = config.css.output_dir + config.css.output_file;
 					var directory = filePath.split(config.css.output_file)[0];
 
-					if(checkFileOrDirectory(directory, 'Directory')) {
+					if (checkFileOrDirectory(directory, 'Directory')) {
 						fs.writeFile(filePath, content, function(err){
-							if(err) { console.log(err) }
+							if (err) { console.log(err) }
 							projectLog('updated', filePath);
 						});
 					}
@@ -83,19 +83,19 @@ exports.file = function(file, compressed) {
 	}
 
 	function compileCoffee(file, compressed) {
+		var filePath = config.js.output_dir + config.js.output_file;
+		var directory = filePath.split(config.js.output_file)[0];
 		var currentFile = config.js.input_dir + file;
 
-		if(checkFileOrDirectory(currentFile, 'File')) {
+		if (checkFileOrDirectory(currentFile, 'File')) {
 			fs.readFile(currentFile, 'utf8', function(err, data){
 				var content = coffee.compile(data);
-				var filePath = config.js.output_dir + config.js.output_file;
-				var directory = filePath.split(config.js.output_file)[0];
-
-				if(checkFileOrDirectory(directory, 'Directory')) {
+				
+				if (checkFileOrDirectory(directory, 'Directory')) {
 					fs.writeFile(filePath, content, function(err){
-						if(err) { console.log(err) }
+						if (err) { console.log(err) }
 
-						if(compressed) {
+						if (compressed) {
 							content = uglify.minify(filePath);
 							fs.writeFile(filePath, content.code);
 						}
@@ -104,18 +104,16 @@ exports.file = function(file, compressed) {
 					});
 				}
 			});
-		} else {
-			console.log('Directory not found: ' + directory);
 		}
 	}
 
 	function checkFileOrDirectory(file, type) {
-		if(fs.existsSync(file))
+		if (fs.existsSync(file)) {
 			return true;
-		else
+		} else {
 			console.log(type, 'not found:', file);
-
-		return false;
+			return false;
+		}
 	}
 
 	function projectLog(action, file) {

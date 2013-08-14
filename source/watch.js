@@ -37,9 +37,14 @@ exports.init = function () {
 		for (i; i < files.length; i++) {
 			var currentFile = files[i];
 
-			fs.watch(currentFile, function (e, file) {
-				compile.file(file);
-			});
+			if (fs.existsSync(currentFile)) {
+				fs.watch(currentFile, function (e, file) {
+					console.log(file);
+					compile.file(file);
+				});
+			} else {
+				console.log('File not found: '+ currentFile);
+			}
 		}
 	} else {
 		console.log('File not found: ' + currentFile);

@@ -111,7 +111,6 @@ function watchProject() {
 	console.log('Watching...');
 
 	var watch = require('./source/watch.js');
-
 	watch.init();
 }
 
@@ -122,6 +121,5 @@ function bildProject() {
 	console.log('Preparing files...');
 
 	var build = require('./source/build.js');
-
 	build.init();
 }
