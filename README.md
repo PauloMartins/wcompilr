@@ -13,9 +13,9 @@ Node: http://nodejs.org
 
 *Install*
 
-`npm install wcompilr`
-clone this repository or
-[Download zip](https://github.com/PauloMartins/wcompilr/archive/master.zip)
+- `npm install wcompilr`
+- clone this repository or
+- [Download zip](https://github.com/PauloMartins/wcompilr/archive/master.zip)
 
 *Use*
 
