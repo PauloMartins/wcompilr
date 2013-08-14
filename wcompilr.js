@@ -7,11 +7,12 @@ unused:true, curly:true, browser:false, indent:4, maxerr:50, jquery: true */
 * version: 0.1
 */
 var child = require('child_process'),
+	config = require('./config.json').config,
 	exec = child.exec,
 	modules = [];
 
 // Start
-console.log('- Wcompilr');
+console.log('- Wcompilr: ' + config.app);
 
 // Get command line
 var params = process.argv;
@@ -22,39 +23,14 @@ params.shift();
 
 // Call function by param
 if (params.length === 0) {
-	console.log('Choose an action: install, watch or build');
+	console.log('Choose an action: watch or build');
 } else {
-	if (params[0] === 'install') {
-		installModules();
-	} else if (params[0] === 'watch' && checkModules()) {
+	if (params[0] === 'watch' && checkModules()) {
 		watchProject();
 	} else if (params[0] === 'build' && checkModules()) {
 		bildProject();
-	}
-}
-
-// Install all modules
-function installModules() {
-	'use strict';
-
-	console.log('Checking modules...');
-
-	if (!checkModules(true)) {
-		var i = 0;
-
-		console.log('Modules not found: ' + modules.join(', '));
-		console.log('Installing modules...');
-
-		for (i; i < modules.length; i++) {
-			exec('npm install ' + modules[i], function (err, stdout, stderr) {
-				console.log('stdcmd: ' + stderr);
-				if (err) {
-					console.log('Error: ' + err);
-				}
-			});
-		}
 	} else {
-		console.log('All modules are installed');
+		console.log('Command not found');
 	}
 }
 
@@ -93,7 +69,7 @@ function checkModules(onlyCheck) {
 	if (modules.length > 0) {
 		if (!onlyCheck) {
 			console.log('Some modules were not found: ' + modules.join(', '));
-			console.log('Execute node wcompilr.js install');
+			console.log('Execute npm install');
 		}
 
 		return false;
