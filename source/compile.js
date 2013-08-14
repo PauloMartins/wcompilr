@@ -1,11 +1,9 @@
 /*jshint forin:true, noarg:true, noempty:true, eqeqeq:true, bitwise:true, strict:true, undef:true,
 unused:true, curly:true, browser:false, indent:4, maxerr:50, jquery: true */
 
-/*global console*/
-
 /*
-* Wcompilr - Coffe, Sass and Less watcher and compiler
-* author: Paulo Martins <phmartins6@gmail.com>
+* Wcompilr - Watches and compiles coffescript, sass and less
+* author: Paulo Martins <phmartins6 AT gmail DOT com>
 * version: 0.1
 */
 

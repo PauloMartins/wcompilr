@@ -1,11 +1,9 @@
 /*jshint forin:true, noarg:true, noempty:true, eqeqeq:true, bitwise:true, strict:true, undef:true,
 unused:true, curly:true, browser:false, indent:4, maxerr:50, jquery: true */
 
-/*global console*/
-
 /*
-* M4 Compiler - Coffe, Sass and Less watcher and compiler
-* author: Paulo Martins <phmartins6@gmail.com>
+* M4 Compiler - Watches and compiles coffescript, sass and less
+* author: Paulo Martins <phmartins6 AT gmail DOT com>
 * version: 0.1
 */
 if (process.argv[0] === 'node') {
