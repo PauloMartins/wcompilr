@@ -4,7 +4,7 @@ unused:true, curly:true, browser:false, indent:4, maxerr:50, jquery: true */
 /*
 * Wcompilr - Watches and compiles coffescript, sass and less
 * author: Paulo Martins <phmartins6 AT gmail DOT com>
-* version: 0.1
+* version: 0.0.3
 */
 
 if (process.argv[0] === 'node') {

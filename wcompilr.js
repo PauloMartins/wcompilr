@@ -4,7 +4,7 @@ unused:true, curly:true, browser:false, indent:4, maxerr:50, jquery: true */
 /*
 * Wcompilr - Watches and compiles coffescript, sass and less
 * author: Paulo Martins <phmartins6 AT gmail DOT com>
-* version: 0.1
+* version: 0.0.3
 */
 var child = require('child_process'),
 	config = require('./config.json').config,
@@ -44,6 +44,12 @@ function checkModules(onlyCheck) {
 
 	if (typeof onlyCheck === 'undefined') {
 		onlyCheck = false;
+	}
+
+	try {
+		require('node-watch');
+	} catch (e) {
+		modules.push('node-watch');
 	}
 
 	try {
