@@ -25,10 +25,14 @@ params.shift();
 if (params.length === 0) {
 	console.log('Choose an action: watch or build');
 } else {
-	if (params[0] === 'watch' && checkModules()) {
-		watchProject();
-	} else if (params[0] === 'build' && checkModules()) {
-		bildProject();
+	if (params[0] === 'watch') {
+		if (checkModules()) {
+			watchProject();
+		}
+	} else if (params[0] === 'build') {
+		if (checkModules()) {
+			bildProject();
+		}
 	} else {
 		console.log('Command not found');
 	}

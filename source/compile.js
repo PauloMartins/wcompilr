@@ -36,11 +36,9 @@ exports.file = function(file, compressed) {
 	}
 
 	function compileSass(file, compressed) {
-		var currentFile = config.css.input_dir + file;
-
-		if (checkFileOrDirectory(currentFile, 'File')) {
+		if (checkFileOrDirectory(file, 'File')) {
 			sass.render({
-				file: currentFile,
+				file: file,
 				outputStyle: compressed ? 'compressed' : 'nested',
 				success: function(content){
 					var filePath = config.css.output_dir + config.css.output_file;
@@ -60,10 +58,9 @@ exports.file = function(file, compressed) {
 
 	function compileLess(file, compressed) {
 		var parser = new(less.Parser);
-		var currentFile = config.css.input_dir + file;
 
-		if (checkFileOrDirectory(currentFile, 'File')) {
-			fs.readFile(currentFile, 'utf8', function(err, data){
+		if (checkFileOrDirectory(file, 'File')) {
+			fs.readFile(file, 'utf8', function(err, data){
 				parser.parse(data, function(err, tree){
 					var content = tree.toCSS({ compress: compressed });
 					var filePath = config.css.output_dir + config.css.output_file;
@@ -83,10 +80,9 @@ exports.file = function(file, compressed) {
 	function compileCoffee(file, compressed) {
 		var filePath = config.js.output_dir + config.js.output_file;
 		var directory = filePath.split(config.js.output_file)[0];
-		var currentFile = config.js.input_dir + file;
 
-		if (checkFileOrDirectory(currentFile, 'File')) {
-			fs.readFile(currentFile, 'utf8', function(err, data){
+		if (checkFileOrDirectory(file, 'File')) {
+			fs.readFile(file, 'utf8', function(err, data){
 				var content = coffee.compile(data);
 				
 				if (checkFileOrDirectory(directory, 'Directory')) {
