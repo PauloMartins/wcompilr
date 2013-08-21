@@ -1,7 +1,7 @@
 /*
 * Wcompilr - Watches and compiles coffescript, sass and less
 * author: Paulo Martins <@m4rtinsp>
-* version: 0.0.4
+* version: 0.0.5
 */
 var fs 		= require('fs'),
 	watch 	= require('node-watch'),

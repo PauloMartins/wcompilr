@@ -1,3 +1,9 @@
+/*
+* Wcompilr - Watches and compiles coffescript, sass and less
+* author: Paulo Martins <@m4rtinsp>
+* version: 0.0.5
+*/
+
 // App settings
 var settings = {
 	'directories': {
@@ -20,7 +26,7 @@ var settings = {
 };
 
 // Call Wcompilr
-var wcompilr = require('./wcompilr');
+var wcompilr = require('wcompilr');
 
 // Init
 wcompilr.init(settings);
