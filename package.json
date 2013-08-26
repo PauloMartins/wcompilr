@@ -2,7 +2,7 @@
   "name" : "wcompilr",
   "description" : "Watches and compiles coffescript, sass and less",
   "keywords" : [ "sass", "less", "coffee", "coffeescript", "compile", "watch" ],
-  "version" : "0.0.5",
+  "version" : "0.0.6",
   "author" : "Paulo Martins <@m4rtinsp>",
   "repository" : {
     "type" : "git",
